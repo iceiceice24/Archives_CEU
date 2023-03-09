@@ -1,10 +1,11 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+
 <% @users.each do |user| %>
   <p>Username: <%= user.username %></p>
   <p>Email: <%= user.email %></p>
   <p>Password Digest: <%= user.password_digest %></p>
   <%= link_to 'show', page_path(user.id) %>
 <% end %>
-
+<%= link_to "Folders", folders_path, class:"nav-link" %>
