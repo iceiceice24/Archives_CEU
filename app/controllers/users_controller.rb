@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     end
   
     def show
-      @user = User.find(params[:id])
+        @user = User.find(params[:id])
     end
   
     def index
@@ -22,8 +22,7 @@ class UsersController < ApplicationController
     end
   
     def edit
-        @user = current_user   
-                
+        @user = current_user             
     end
     
     def destroy
@@ -38,12 +37,9 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         if @user.update(user_params)
         flash[:notice] = "User successfully updated"
-        redirect_to root_path
-  
+        redirect_to root_path  
       else
-  
-        render :edit, status: :unprocessable_entity
-                   
+        render :edit, status: :unprocessable_entity                  
       end
     end
   
@@ -54,5 +50,5 @@ class UsersController < ApplicationController
     def find_user
         @user = User.find_by(id: params[:id])
     end
-    
+
 end
