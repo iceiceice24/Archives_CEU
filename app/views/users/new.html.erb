@@ -1,0 +1,18 @@
+<h1>CREATE USER </h1>
+
+    <%= form_with(model: @user, local: true) do |f| %>
+        <div>
+            <%= f.label :username %><br/>
+            <%= f.text_field :username, class: "form-control" %>
+        </div>
+        <div>
+            <%= f.label :password %><br/>
+            <%= f.text_field :password, class: "form-control" %>
+        </div>
+        <div>
+            <%= f.label :password_confirmation %><br/>
+            <%= f.text_field :password_confirmation, class: "form-control" %>
+        </div>
+
+
+    <% end %>

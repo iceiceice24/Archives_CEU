@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :folders
   resources :pages
 
-  root 'folders#home'
+  root 'pages#home'
 end
