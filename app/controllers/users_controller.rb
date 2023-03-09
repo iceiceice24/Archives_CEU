@@ -7,9 +7,10 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
   
-    def index
+    def home
         @users = User.all
     end
+      
   
     def create
         @user = User.new(user_params)
@@ -22,12 +23,10 @@ class UsersController < ApplicationController
     end
   
     def edit
-        @user = current_user             
+        #@user = current_user             
     end
     
     def destroy
-        session[:user_id] = nil
-        @user = current_user
         User.find(params[:id]).destroy
         flash[:notice] = "User successfully deleted"      
         redirect_to root_path
