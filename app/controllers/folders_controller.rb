@@ -1,10 +1,6 @@
 class FoldersController < ApplicationController
-    def home
-        @folders = folder.all
-    end
-   
    def index
-      @folders = current_user.folders
+    @folders = Folder.all
    end
  
    def show
